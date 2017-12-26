@@ -1,7 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+	<div class="columns">
+		<div class="column is-one-third is-offset-one-third m-t-100">
+			<div class="card">
+				<div class="card-content">
+					<h1 class="title">Register</h1>
+					<form action="{{route('register')}}" method="POST" role="form">
+						{{csrf_field()}}
+						<div class="field">
+							<label for="name">Name</label>
+							<p class="control">
+								<input class="input {{$errors->has('name') ? 'is-danger' : ''}}" type="text" name="name" id="name" placeholder="Jone Doe" value="{{old('name')}}" required>
+							</p>
+							@if ($errors->has('name'))
+								<p class="help is-danger">{{$errors->first('name')}}</p>
+							@endif
+						</div>
+
+
+						<div class="field">
+							<label for="email">Email Address</label>
+							<p class="control">
+								<input class="input {{$errors->has('email') ? 'is-danger' : ''}}" type="email" name="email" id="email" placeholder="name@example.com" value="{{old('email')}}" required>
+							</p>
+							@if ($errors->has('email'))
+								<p class="help is-danger">{{$errors->first('email')}}</p>
+							@endif
+						</div>
+
+						<div class="field">
+							<label for="password">Password</label>
+							<p class="control">
+								<input class="input {{$errors->has('password') ? 'is-danger' : ''}}" type="password" name="password" id="password" required>
+							</p>
+							@if ($errors->has('password'))
+								<p class="help is-danger">{{$errors->first('password')}}</p>
+							@endif
+								
+						</div>
+						<div class="field">
+							<label for="password_confirmation">Confirma Password</label>
+							<p class="control">
+								<input class="input {{$errors->has('password') ? 'is-danger' : ''}}" type="password" name="password_confirmation" id="password_confirmation" required>
+							</p>
+							@if ($errors->has('password_confirmation'))
+								<p class="help is-danger">{{$errors->first('password_confirmation')}}</p>
+							@endif
+								
+						</div>
+							<button class="button is-primary is-outlined is-fullwidth m-t-30">Login</button>
+					</form>
+					
+				</div><!-- End Of Card Content-->
+
+			</div>
+			<h5 class="has-text-centered m-t-20"><a class="has-text-grey-light" href="{{route('login')}}">Already have an Account?</a></h5>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+{{--  <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -73,5 +140,5 @@
             </div>
         </div>
     </div>
-</div>
+</div>  --}}
 @endsection

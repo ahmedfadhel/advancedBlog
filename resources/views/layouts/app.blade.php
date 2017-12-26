@@ -27,9 +27,9 @@
 								<a href="" class="navbar-item is-tab is-hidden-mobile">Share</a>
 							</div>
 							<div class="navbar-end">
-								@if (!Auth::guest())
-									<a href="#" class="navbar-item is-tab">Login</a>
-									<a href="#" class="navbar-item is-tab">Join Us</a>
+								@if (Auth::guest())
+									<a href="{{route('login')}}" class="navbar-item is-tab">Login</a>
+									<a href="{{route('register')}}" class="navbar-item is-tab">Join Us</a>
 								@else
 									<button class="dropdown is-aligned-right navbar-item is-tab">
 										Hey User <span class="icon"><i class="fa fa-fw m-l-5 fa-caret-down"></i></span>
