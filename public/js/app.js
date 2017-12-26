@@ -1041,6 +1041,12 @@ window.Vue = __webpack_require__(35);
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a);
 // Vue.component('example', require('./components/Example.vue'));
 
+$(document).ready(function () {
+  $('button.dropdown').hover(function () {
+    $(this).toggleClass('is-open');
+  });
+});
+
 /***/ }),
 /* 12 */
 /***/ (function(module, exports, __webpack_require__) {
