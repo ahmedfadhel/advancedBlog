@@ -3169,7 +3169,7 @@ th {
 }
 
 html {
-  background-color: white;
+  background-color: whitesmoke;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -17265,6 +17265,7 @@ button.navbar-item {
 
 .navbar {
   height: 4.5rem;
+  z-index: 1001;
 }
 
 .navbar-item img {
@@ -17653,5 +17654,13 @@ button.navbar-item {
 
 .p-r-100 {
   padding-right: 100px !important;
+}
+
+.side-menu {
+  position: fixed;
+  overflow-x: hidden;
+  height: 100vh;
+  width: 200px;
+  background-color: white;
 }
 
