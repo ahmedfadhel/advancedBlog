@@ -17664,3 +17664,14 @@ button.navbar-item {
   background-color: white;
 }
 
+.management-area {
+  position: absolute;
+  left: 200px;
+  top: 4rem;
+  right: 0;
+}
+
+.flex-container {
+  margin: 10px 25px;
+}
+

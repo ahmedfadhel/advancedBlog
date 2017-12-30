@@ -28,9 +28,14 @@
 								<span class="icon"><i class="fa fa-fw m-l-5 fa-cog"></i></span>
 								Settings</a></li>
 							<li class="sperator"></li>
-							<li><a href="#">
-								<span class="icon"><i class="fa fa-fw m-l-5 fa-sign-out"></i></span>
-								Logout</a></li>
+							<li>
+								<a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+									<span class="icon"><i class="fa fa-fw m-l-5 fa-sign-out"></i></span>
+									Logout</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+									{{csrf_field()}}
+								</form>
+							</li>
 						</ul>
 
 					</button>	
