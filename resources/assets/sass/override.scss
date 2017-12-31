@@ -47,3 +47,6 @@ button.navbar-item{
 .navbar-item img {
 	max-height: 2.8rem;
 }
+.table.is-hoverable tbody tr:not(.is-selected):hover {
+	background-color: #00ffd9;
+}

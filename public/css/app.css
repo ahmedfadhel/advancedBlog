@@ -17272,6 +17272,10 @@ button.navbar-item {
   max-height: 2.8rem;
 }
 
+.table.is-hoverable tbody tr:not(.is-selected):hover {
+  background-color: #00ffd9;
+}
+
 .m-t-5 {
   margin-top: 5px !important;
 }
