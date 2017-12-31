@@ -17276,6 +17276,10 @@ button.navbar-item {
   background-color: #00ffd9;
 }
 
+.menu-list a:hover {
+  background-color: #00ffd9;
+}
+
 .m-t-5 {
   margin-top: 5px !important;
 }
