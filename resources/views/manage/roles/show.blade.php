@@ -4,7 +4,7 @@
   <div class="flex-container">
     <div class="columns">
       <div class="column is-two-thirds">
-        <h1 class="title">{{$role->display_name}}<small class="m-l-25"><em>({{$role->name}})</em></small></h1>
+        <h1 class="title">{{$role->display_name}}<small class="subtitle m-l-25"><em>({{$role->name}})</em></small></h1>
         <h5>{{$role->description}}</h5>
       </div>
       <div class="column">
