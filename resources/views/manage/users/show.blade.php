@@ -20,6 +20,15 @@
           <label for="email">Email:</label>
           <p>{{$user->email}}</p>
         </div>
+        <div class="field">
+          <label for="roles">Roles:</label>
+          <ul>
+            @foreach ($user->roles as $role)
+              <li>{{$role->display_name}} <em>({{$role->description}})</em></li>
+            @endforeach
+          </ul>
+          
+        </div>
       </div>
     </div>
   </div>

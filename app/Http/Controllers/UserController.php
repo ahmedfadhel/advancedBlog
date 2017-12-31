@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
 use Hash;
 use Session;
 class UserController extends Controller
@@ -77,7 +78,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::findorFail($id);
+
+        
+        $user = User::where('id',$id)->with('roles')->first();
         return view('manage.users.show')->withUser($user);
     }
 
@@ -89,8 +92,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findorFail($id);
-        return view('manage.users.edit')->withUser($user);
+        $user = User::where('id',$id)->with('roles')->first();
+        $roles = Role::all();
+        return view('manage.users.edit')->withUser($user)->withRoles($roles);
     }
 
     /**
@@ -102,6 +106,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+      
         $this->validate($request,[
             'name'  =>'required|max:255',
             'email' =>'required|email|unique:users,email,'.$id
@@ -123,7 +128,9 @@ class UserController extends Controller
             $user->password = Hash::make($request->password);
         }
         
-       
+       if($request->has('user_selected_role')){
+           $user->syncRoles($request->user_selected_role);
+       }
 
         if($user->save()){
             return redirect()->route('users.show',$user->id);
