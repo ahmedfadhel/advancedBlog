@@ -1,18 +1,64 @@
-.side-menu{
+#admin-side-menu{
   position: fixed;
   overflow-x: hidden;
   height: 100vh;
+  bottom: 0;
+  top:72px;
   width:200px;
   background-color:white;
+  left:-200px;
+  transition: left 0.3s ease-in-out;
+  &.is-active {
+    left: 0;
+    transition:left 0.3s ease-in-out;
+  }
+  @include desktop {
+    left: 0;
+    
+  }
 }
+#admin-sidemenu-button {
+  transition:0.3s;
+  color: #00ffd9;
+  &.is-active {
+    transform: rotateY(180deg);
+    transition:0.3s;
+    background-color: transparent;
+    color: #00ffd9;
+  }
+  &:hover {
+    background-color: transparent;
+    color: #00ffd9;
 
+  }
+}
 .management-area{
   position: absolute;
-  left:200px;
+  left:0px;
   top:4rem;
   right: 0;
- 
+  transition:left 0.3s ease-in-out;
+  &.is-active {
+    left:200px;
+  }
+  @include desktop {
+    left: 200px;
+  }
 }
 .flex-container{
   margin:10px 25px;
+}
+
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+.navbar-burger {
+  margin-top:0.5rem;
+  border: none;
+}
+.menu-list li ul {
+  margin-top: 0;
+  margin-bottom: 0;
 }

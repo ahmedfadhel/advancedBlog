@@ -1,13 +1,25 @@
 <nav class="navbar has-shadow">
 	<div class="container">
+		<div class="navbar-brand">
+			<a href="{{route('home')}}" class="navbar-item">
+				<img src="{{asset('images/devmarketer-logo.png')}}" alt="Advanced Blog">
+			</a>
+			@if (Request::segment(1) == 'manage')
+				<a class="navbar-item is-hidden-desktop" id="admin-sidemenu-button">
+					<span class="icon">	<i class="fa fa-fw fa-lg fa-arrow-circle-o-right"></i></span>
+				</a>
+			@endif
+			<button class="button navbar-burger">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
 		<div class="navbar-menu">
 			<div class="navbar-start">
-				<a href="{{'home'}}" class="navbar-item">
-								<img src="{{asset('images/devmarketer-logo.png')}}" alt="Advanced Blog">
-				</a>
-				<a href="" class="navbar-item is-tab is-hidden-mobile m-l-10">Learn</a>
-				<a href="" class="navbar-item is-tab is-hidden-mobile">Discuss</a>
-				<a href="" class="navbar-item is-tab is-hidden-mobile">Share</a>
+				<a href="#" class="navbar-item is-tab is-hidden-mobile m-l-10">Learn</a>
+				<a href="#" class="navbar-item is-tab is-hidden-mobile">Discuss</a>
+				<a href="#" class="navbar-item is-tab is-hidden-mobile">Share</a>
 			</div>
 			<div class="navbar-end">
 				@if (Auth::guest())

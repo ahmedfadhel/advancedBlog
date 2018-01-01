@@ -1045,6 +1045,7 @@ $(document).ready(function () {
     $(this).toggleClass('is-open');
   });
 });
+__webpack_require__(48);
 
 /***/ }),
 /* 12 */
@@ -40379,6 +40380,53 @@ module.exports = Vue$3;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */
+/***/ (function(module, exports) {
+
+var accordion = document.getElementsByClassName('has-submenu');
+var adminSideMenuButton = document.getElementById('admin-sidemenu-button');
+var management = document.getElementById('app');
+adminSideMenuButton.onclick = function () {
+  this.classList.toggle('is-active');
+
+  document.getElementById('admin-side-menu').classList.toggle('is-active');
+  management.classList.toggle('is-active');
+};
+
+for (var i = 0; i < accordion.length; i++) {
+  if (accordion[i].classList.contains('is-active')) {
+    var submenu = accordion[i].nextElementSibling;
+    submenu.style.maxHeight = submenu.scrollHeight + 'px';
+    submenu.style.marginTop = '0.75em';
+    submenu.style.marginBottom = '0.75em';
+  }
+  accordion[i].onclick = function () {
+    // this.classList.toggle('is-active')
+
+    var submenu = this.nextElementSibling;
+
+    if (submenu.style.maxHeight) {
+      submenu.style.maxHeight = null;
+      submenu.style.marginTop = null;
+      submenu.style.marginBottom = null;
+    } else {
+      submenu.style.maxHeight = submenu.scrollHeight + 'px';
+      submenu.style.marginTop = '0.75em';
+      submenu.style.marginBottom = '0.75em';
+    }
+  };
+}
 
 /***/ })
 /******/ ]);

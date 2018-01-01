@@ -53,7 +53,8 @@ button.navbar-item{
 
 
 
-.menu-list a:hover {
-		background-color: #00ffd9;
-	}
+.menu-list a:hover,
+.menu-list a.is-active {
+	background-color: #00ffd9;
+}
 		

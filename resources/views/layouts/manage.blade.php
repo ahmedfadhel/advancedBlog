@@ -16,7 +16,7 @@
 <body>
     @include('includes.nav._main')
     @include('includes.nav._manage')
-    <div id="app" class="management-area">
+    <div id="app" class="management-area" >
         
         @yield('content')
     </div>
